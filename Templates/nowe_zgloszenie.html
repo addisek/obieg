@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zgłoszenia błędów</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #5a9c65;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 800px; /* Szerokość kontenera dostosowana do zawartości */
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background-color: #5a9c65;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #406b46;
+        }
+
+        .fa-edit,
+        .fa-trash {
+            margin-right: 5px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th {
+            background-color: #5a9c65;
+            color: #fff;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Styl dla hiperłączy */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            color: inherit;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        /* Dodatkowy styl dla formularza */
+        .btn-submit {
+            background-color: #5a9c65;
+            color: #fff;
+        }
+
+        .btn-submit:hover {
+            background-color: #406b46;
+        }
+
+        .btn-back {
+            background-color: #ccc;
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Zgłoszenia błędów</h1>
+    <div class="container">
+      
+
+        <!-- Formularz zgłaszania błędu -->
+        <div class="form-container">
+            <h2>Zgłoś błąd</h2>
+            <form method="POST" action="{{ url_for('submit_error') }}">
+                <div class="form-group">
+                    <label for="name">Twoje imię i nazwisko</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="error_description">Opis błędu</label>
+                    <textarea class="form-control" id="error_description" name="error_description" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">Zgłoś błąd</button>
+                <a href="menu.html" class="btn btn-back"><i class="fas fa-arrow-left"></i> Powrót</a> <!-- Dodany przycisk Powrót -->
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Rejestracja użytkowników</title>
+    <meta charset="utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        /* Stylizacja podobna do twojego poprzedniego kodu */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #5a9c65;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .fa-user,
+        .fa-lock,
+        .fa-envelope,
+        .fa-building,
+        .fa-sign-in-alt {
+            margin-right: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Rejestracja użytkowników</h1>
+    <div class="container">
+        <form onsubmit="return registerUser();">
+            <label for="username">
+                <i class="fas fa-user"></i>
+                Nazwa użytkownika:
+            </label>
+            <input type="text" id="username" name="username">
+            
+            <label for="password">
+                <i class="fas fa-lock"></i>
+                Hasło:
+            </label>
+            <input type="password" id="password" name="password">
+            
+            <label for="email">
+                <i class="fas fa-envelope"></i>
+                Adres e-mail:
+            </label>
+            <input type="email" id="email" name="email">
+            
+            <label for="department">
+                <i class="fas fa-building"></i>
+                Dział:
+            </label>
+            <select id="department" name="department">
+                <option value="hr">Zasoby ludzkie</option>
+                <option value="finance">Finanse</option>
+                <option value="it">Informatyka</option>
+                <option value="sales">Sprzedaż</option>
+            </select>
+            
+            <input type="submit" class="btn btn-success btn-block" value="Zarejestruj">
+        </form>
+        <a href="menu_admin.html" class="btn btn-primary btn-block">Powrót do menu</a>
+    </div>
+
+    <script type="text/javascript">
+        function registerUser() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var department = document.getElementById("department").value;
+            
+            // Tutaj musisz dodać kod, który będzie zapisywać dane użytkownika, takie jak
+            // username, password, email i department w bazie danych.
+            // To jest tylko formularz HTML, a obsługa rejestracji musi być zaimplementowana po stronie serwera.
+            
+            // Po zapisaniu danych możesz przekierować użytkownika na stronę logowania lub inny widok.
+            
+            alert("Rejestracja zakończona pomyślnie! Możesz teraz się zalogować.");
+            // Przekierowanie do menu_admin.html po zarejestrowaniu użytkownika
+            window.location.href = "menu_admin.html";
+            return false;
+        }
+    </script>
+</body>
+
+</html>

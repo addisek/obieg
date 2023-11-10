@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-content {
+            background-color: #fff;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            background-color: #5a9c65;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin: 0 0 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input[type=text],
+        input[type=password] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #000; /* Dodanie czarnej obramówki */
+            border-radius: 5px;
+            background: #fff; /* Dodanie białego tła */
+        }
+
+        input[type=submit] {
+            background-color: #5a9c65;
+            padding: 10px 20px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type=submit]:hover {
+            background-color: #406b46;
+        }
+
+        .menu-button {
+            background-color: #5a9c65;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            display: block;
+        }
+
+        .menu-button:hover {
+            background-color: #406b46;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1>Formularz logowania</h1>
+        
+        <!-- Formularz logowania -->
+        <form action="{{ url_for('login') }}" method="post">
+            <input type="text" name="username" placeholder="Nazwa użytkownika" required>
+            <input type="password" name="password" placeholder="Hasło" required>
+            <input type="submit" value="Zaloguj się">
+        </form>
+
+        <!-- Przycisk powrotu do menu -->
+        <a class="menu-button" href="{{ url_for('index') }}">Powrót do strony głównej</a>
+    </div>
+</body>
+</html>

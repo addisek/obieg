@@ -1,0 +1,16 @@
+create table users (id integer primary key autoincrement, name varchar(100) not null unique, email varchar(100) not null unique, password test, is_active 
+booolen not null default 0, is_admin boolean not null default 0);
+
+create table transactions (id integer primary key autoincrement, currency varchar (5), amount int, user varchar(30), trans_date not null default(date()));
+
+user jtq
+password nMk 
+
+ala2@ala2
+ala2
+
+.\env\Scripts\Activate.ps1
+
+$env:FLASK_DEBUG = "1" 
+
+flask run             

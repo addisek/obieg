@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dokumenty</title>
+</head>
+<body>
+    <h1>Lista dokkumentów</h1>
+    <ul>
+        {% for document in documents %}
+            <li>
+                <p>Nazwa dokumentu: {{ document[1] }}</p>
+                <p>Data utworzenia: {{ document[2] }}</p>
+                <a href="{{ url_for('download_document', document_id=document[0]) }}">Pobierz</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome dla ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #e2e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #5a9c65;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            background-color: #5a9c65;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #406b46;
+        }
+
+        .fa-user,
+        .fa-lock,
+        .fa-sign-in-alt {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>New User</h1>
+    <form id="user_form" action="{{url_for('new_user')}}" method="POST">
+        <label>User Name <i class="fas fa-user"></i></label><input type="text" id="user_name" name="user_name" value="{{user.user_name}}">
+        <br>
+        <label>Email <i class="fas fa-at"></i></label><input type="text" id="email" name="email" value="{{user.email}}">
+        <br>
+        <label>Password <i class="fas fa-lock"></i></label><input type="password" id="user_pass" name="user_pass" value="{{user.password}}">
+        <br>
+        <button type="submit" class="btn btn-primary">Send <i class="fas fa-sign-in-alt"></i></button>
+    </form>
+</body>
+
+</html>

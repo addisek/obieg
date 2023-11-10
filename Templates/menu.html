@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Main Menu</title>
+    <meta charset="utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome dla ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #5a9c65;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .menu-tile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #5a9c65;
+            color: #fff;
+            border-radius: 3px;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .menu-text {
+            font-size: 18px;
+        }
+
+        .menu-tile:hover {
+            background-color: #406b46;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <h1>Main Menu</h1>
+    <div class="container">
+        <div class="welcome-message">
+            Witaj, {{ user[1] }}
+        </div>
+        <div class="menu-tile">
+            <i class="fas fa-upload menu-icon"></i>
+            <span class="menu-text"><a href="{{ url_for('upload') }}">Prześlij nowy dokument</a></span>
+        </div>
+        <div class="menu-tile">
+            <i class="fas fa-file-alt menu-icon"></i>
+            <span class="menu-text"><a href="{{ url_for('mojedokumenty') }}">Moje dokumenty</a></span>
+        </div>
+        <div class="menu-tile">
+            <i class="fas fa-sign-out-alt menu-icon"></i>
+            <span class="menu-text"><a href="{{ url_for('logout') }}">Wyloguj</a></span>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            checkSession();
+        });
+
+        function checkSession() {
+            // Sprawdzenie, czy 'user_id' istnieje w sesji
+            {% if 'user_id' not in session %}
+                window.location.href = "{{ url_for('login') }}";
+            {% endif %}
+        }
+
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
+</body>
+
+</html>

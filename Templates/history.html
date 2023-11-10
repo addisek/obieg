@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Transactions</title>
+    <meta charset="utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome dla ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            background-color: #fff;
+            width: 100%;
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #5a9c65;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        td {
+            border-bottom: 1px solid #ccc;
+        }
+
+        a {
+            color: #5a9c65;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        a:hover {
+            color: #406b46;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Currency</th>
+                <th>Amount</th>
+                <th>Data</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+            <tr>
+                <th>{{ transaction.id }}</th>
+                <th>{{ transaction.Currency }}</th>
+                <th>{{ transaction.Amount }}</th>
+                <th>{{ transaction.trans_date }}</th>
+                <td>
+                    <a href="#" role="button">Actions</a>
+                    <a href="{{ url_for('edit_transaction', transaction_id=transaction.id )}}" role="button">Edit</a>
+                    <a href="{{ url_for('delete_transaction', transaction_id=transaction.id )}}" role="button">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

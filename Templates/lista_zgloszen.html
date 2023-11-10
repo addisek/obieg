@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zgłoszenia błędów</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #5a9c65;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 800px; /* Szerokość kontenera dostosowana do zawartości */
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background-color: #5a9c65;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #406b46;
+        }
+
+        .fa-edit,
+        .fa-trash {
+            margin-right: 5px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th {
+            background-color: #5a9c65;
+            color: #fff;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Styl dla hiperłączy */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Zgłoszenia błędów</h1>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Opis błędu</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <a href="menu_admin.html" class="btn btn-back"><i class="fas fa-arrow-left"></i> Powrót</a>
+                <tr>
+                    <td>1</td>
+                    <td>Przykładowy użytkownik</td>
+                    <td>przykladowy błąd</td>
+                    <td class="btn-container">
+                        <a href="#" class="btn btn-danger btn-sm" onclick="return confirm('Czy na pewno chcesz usunąć zgłoszenie?');">
+                            <i class="fa fa-trash"></i> Delete
+                        </a>
+                    </td>
+                </tr>
+                <!-- Dodaj więcej wierszy z zgłoszeniami błędów -->
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

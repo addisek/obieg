@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Main Menu Admin</title>
+    <meta charset="utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome dla ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #5a9c65;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .menu-tile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #5a9c65;
+            color: #fff;
+            border-radius: 3px;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .menu-text {
+            font-size: 18px;
+        }
+
+        .menu-tile:hover {
+            background-color: #406b46;
+        }
+
+        p {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .fa-user,
+        .fa-lock,
+        .fa-sign-in-alt {
+            margin-right: 10px;
+        }
+
+        /* Styl dla hiperłączy */
+        a {
+            text-decoration: none; /* Usunięcie podkreślenia z hiperłączy */
+            color: inherit; /* Dziedziczenie koloru tekstu */
+        }
+
+        a:hover {
+            color: inherit; /* Dziedziczenie koloru tekstu po najechaniu myszką */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Main Menu Admin</h1>
+    <div class="container">
+        <h2>Welcome,</h2>
+        <h2>{{ user.name }}</h2>
+         <div class="menu-tile">
+            <i class="fas fa-user-plus menu-icon"></i>
+            <span class="menu-text"><a href="rejestracja.html">Rejestracja użytkowników</a></span>
+        </div>
+        <div class="menu-tile">
+            <i class="fas fa-upload menu-icon"></i>
+            <span class="menu-text"><a href="wysylanie_dokumentu_admin.html">Prześlij nowy dokument</a></span>
+        </div>
+        <div class="menu-tile">
+            <i class="fas fa-file menu-icon"></i>
+            <span class="menu-text"><a href="history.html">Twoje dokumenty</a></span>
+        </div>
+        <div class="menu-tile">
+            <i class="fas fa-bell menu-icon"></i>
+            <span class="menu-text"><a href="lista_zgloszen.html">Zgłoszenia użytkowników</a></span>
+        </div>
+        <div class="menu-tile">
+            <i class="fas fa-user menu-icon"></i>
+            <span class="menu-text"><a href="edit_user.html">Zarządzanie użytkownikami</a></span>
+        </div>
+        <div class="menu-tile">
+            <i class="fas fa-cog menu-icon"></i>
+            <span class="menu-text"><a href="settings_admin.html">Ustawienia</a></span>
+        </div>
+        <div class="menu-tile">
+            <i class="fas fa-sign-out-alt menu-icon"></i>
+            <span class="menu-text"><a href="login.html">Wyloguj</a></span>
+        </div>
+    </div>
+</body>
+
+</html>
